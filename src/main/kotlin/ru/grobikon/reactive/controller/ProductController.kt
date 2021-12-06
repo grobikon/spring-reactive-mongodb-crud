@@ -30,6 +30,7 @@ class ProductController(
 
     @PostMapping
     fun saveProduct(@RequestBody productDtoMono: Mono<ProductDto>): Mono<ProductDto> {
+        println("controller method called ...")
         return productService.saveProduct(productDtoMono)
     }
 

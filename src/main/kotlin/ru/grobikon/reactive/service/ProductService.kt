@@ -47,6 +47,7 @@ class ProductService(
      * @param productDtoMono - продукт, который будем сохранять в БД MongoDB
      */
     fun saveProduct(productDtoMono: Mono<ProductDto>): Mono<ProductDto> {
+        println("server method called ...")
         return productDtoMono
             .map(::dtoToEntity)
             .flatMap(productRepository::insert)
